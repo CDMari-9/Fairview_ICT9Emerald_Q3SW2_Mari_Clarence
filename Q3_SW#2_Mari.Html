@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Q3 seatwork 2</title>
+
+</head>
+
+    <body class="bg-dark text-light">
+        <nav class="navbar navbar-exapnd-lg" style="background-color:white">
+            <div class="container-fluid">
+                <a class="navbar-brand text-black" href="#">Shop & Locate</a>
+                
+                </div>
+        </nav>
+
+        
+        <div class="container mt-4">
+            <div class="row">
+         <h2 class="text-center"> Laptop/Computer Product Locator </h2>
+       
+         <br>
+
+         <details ontoggle="message1()">
+             <summary><u>Instructions</u></summary>
+             <i id="message">Put the budget on the  white box to see the result of the gaming laptop that is suitable for you.</i>
+         </details>
+
+         <br>
+
+         <div class="row mb-3">
+            <div class="col-lg-6">
+                <label for="budget" class="form-label">Type your budget:</label>
+                <input type="number" class="form-control" id="budget">
+            </div>
+         </div>
+
+         <div class="row mb-3">
+            <div class="col-lg-6">
+                <label for="brand" class="form-label">Select the brand you want from the options:</label>
+                <select class="form-select" id="brand">
+                    <option>Acer</option>
+                    <option>MSI</option>
+                    <option>Lenovo</option>
+                    <option>Macbook</option>
+                    <option>Samsung</option>
+                </select>
+            </div>
+         </div>
+
+         <div class="row mb-3">
+            <div class="col-lg-6">
+                <label for="brand" class="form-label">Select Holiday to get a 20% discount (note the discount is only applicable on the day itself, and only if you pick it up from the mall)</label>
+                <select class="form-select" id="holiday">
+                    <option>Valentine</option>
+                    <option>Christmas</option>
+                    <option>Halloween</option>
+                    <option>Labor Day</option>
+                    <option>Holy Week</option>
+                    <option>Your Birthday</option>
+                    <option>None</option>
+                </select>
+            </div>
+         </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-6">
+                <label for="brand" class="form-label">Enter type of Laptop or Computer</label>
+                <select class="form-select" id="Type of Laptop r Computer">
+                    <option>Ultrabook</option>
+                    <option>Gaming Latop</option>
+                    <option>Rugged laptop</option>
+                    <option>Super Computer</option>
+                    
+                </select>
+            </div>
+         </div>
+
+         <div class="row mb-3">
+            <div class="col-lg-6">
+                <kbd id="result1">Computation Result</kbd>
+            </div>
+         </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-6">
+                <kbd id="result2">Recommended Store</kbd>
+            </div>
+        </div>
+        
+
+        <div class="mb-3">
+             <img id="storeLogo" src="" alt="Store Logo" style="max-width:200px; display:none;">
+
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="findStore()">Find Store</button>
+    </div>
+
+    <script>
+          function message1(){
+            document.getElementById("message").innerHTML = "Type here to find the available stores.";
+          }
+
+          function findStore(){
+            var budget = document.getElementById("budget").value;
+            var brand = document.getElementById("brand").value;
+          
+
+          var a={   
+          "Acer": { price: 47000, store: "SM FAIRVIEW CYBERZONE, Mall of ASIA" },
+          "MSI": { price: 69000, store: "SM NORTH EDSA, Mall of ASIA" },
+          "Lenovo": { price: 67000, store: "Mall of ASIA, STARMALL" },
+          "Macbook":  { price: 50000, store: "SM FAIRVIEW CYBERZONE, SM NORTH EDSA, MEGAMALL, Rockwell, & MOA" },
+          "Samsung": { price: 34000, store: "SM FAIRVIEW CYBERZONE, SM NORTH EDSA, MEGAMALL, & MOA" }
+
+          };
+          
+          var price = a[brand].price;
+          var store = a[brand].store;
+            
+          var remaining = budget - price;
+
+            var result1 = "Remaining Money: ₱" + remaining;
+             var result2 = "Recommended Store: " + store;
+            
+             document.getElementById("result1").innerHTML = result1;
+            document.getElementById("result2").innerHTML = result2;
+        }
+        
+
+
+    </script>
+
+    </div>
+    
+    
+</body>
+</html>
